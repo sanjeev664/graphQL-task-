@@ -1,13 +1,10 @@
 from fileinput import filename
 from django.shortcuts import render
-import aspose.words as aw
 from django.contrib import messages
 from django.http import HttpResponse, HttpResponseRedirect
 # from celery import shared_task
 import time
-import pytest
 from django.shortcuts import render
-from project import celery_app
 
 
 
@@ -36,7 +33,7 @@ from project import celery_app
 
 
 def index(request):
-    return render(request,"index.html")
+    return render(request,"pdfword_index.html")
 
 # @celery_app.task(ignore_result=False)
 # def send_email_run_task():

@@ -1,7 +1,6 @@
 
 from django.contrib import messages
 from django.shortcuts import redirect, render
-from .task import *
 import requests
 # Create your views here.
 def HomeView(request):
@@ -14,5 +13,5 @@ def HomeView(request):
         }
         response = requests.post('http://localhost:8000/graphql', files=files)  
         messages.success(request,"Uploaded Successfully!")    
-        return redirect('homepage')  
-    return render(request, 'index.html')
+        return redirect('graphtask:homepage')  
+    return render(request, 'graphql_index.html')

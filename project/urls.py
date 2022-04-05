@@ -25,7 +25,7 @@ from django.urls import re_path, include
 from graphenetask import schema
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('graphenetask.urls')),
+    path('graph/',include('graphenetask.urls')),
     # path("graphql", csrf_exempt(GraphQLView.as_view(graphiql=True, schema=schema.schema))),
     re_path(r'^graphql', csrf_exempt(FileUploadGraphQLView.as_view(graphiql=True))),
     
