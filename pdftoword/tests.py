@@ -1,3 +1,14 @@
-from django.test import TestCase
+import aspose.words as aw
+import pytest
 
-# Create your tests here.
+
+
+doc = aw.Document("test.pdf")
+
+assert doc.save("word.docx")
+
+
+
+
+
+
