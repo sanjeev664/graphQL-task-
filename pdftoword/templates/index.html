@@ -1,0 +1,33 @@
+<html>
+{% load static %}
+<body>
+
+<p>Click on the "Choose File" button to upload a PDF file:</p>
+<div>
+  
+    {% if messages %}
+              
+                    {% for message in messages %}
+                    <div style="color:red;" class="alert alert-success">
+                     <a class="close" style= color:#0d6efd; data-dismiss="alert" href="#">×</a> {{ message }}
+                  </div>
+                    {% endfor %}
+                
+         {% endif %} 
+</div>
+<form action="/" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+  <input type="file" accept="application/pdf"  name="filename">
+  <button type="submit">submit</button>
+</form>
+<div class='progress-wrapper'>
+  <div id='progress-bar' class='progress-bar' style="background-color: #68a9ef; width: 0%;">&nbsp;</div>
+</div>
+<div id="progress-bar-message">Waiting for progress to start...</div>
+
+
+
+
+</body>
+</html> 
